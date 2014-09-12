@@ -27,45 +27,45 @@ Use uptime robot or pingdom to remove downtime on heroku's free worker dyno.
 
 === Change Database.yml
 
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
+	default: &default
+		adapter: postgresql
+		encoding: unicode
+		pool: 5
 
-development:
-  <<: *default
-  database: dementia_dev
+	development:
+		<<: *default
+		database: dementia_dev
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: dementia_test
+	# Warning: The database defined as "test" will be erased and
+	# re-generated from your development database when you run "rake".
+	# Do not set this db to the same as development or production.
+	test:
+		<<: *default
+		database: dementia_test
 
-production:
-  <<: *default
-  database: production
+	production:
+		<<: *default
+		database: production
 
 
 === Create Databases
 
-sudo su - postgres
+	sudo su - postgres
 
-psql
+	psql
 
-CREATE DATABASE dementia_dev;
+	CREATE DATABASE dementia_dev;
 
-CREATE DATABASE dementia_test;
+	CREATE DATABASE dementia_test;
 
-check with \list
+	check with \list
 
 === Open Fresh Terminal
 
-rake db:migrate
+	rake db:migrate
 
-rake db:setup
+	rake db:setup
 
 === Start Server
 
-rake s
+	rake s
