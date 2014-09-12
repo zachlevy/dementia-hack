@@ -1,0 +1,48 @@
+== Production ready Rails 4 and Heroku template
+
+This template contains the following:
+
+* Ruby 2.1.1
+
+* Sass
+
+* Bootstrap with variable customization setup 
+
+* Coffeescript
+
+* Slim
+
+* Postgres
+
+* Unicorn
+
+* Figaro
+
+* rails_12factor for Heroku
+
+
+
+== Setup
+
+git clone git@github.com:jbhatab/rails-heroku-template.git
+
+bundle install
+
+Create /config/application.yml file for enviroment variables. Example is in config folder.
+
+Install postgres on local machine
+
+rake db:create
+
+rake s. This is a rake task that runs unicorn.
+
+
+Note: When pushing to production use figaro's command to send config vars,
+
+rake figaro:heroku
+
+or 
+
+rake figaro:heroku[my-awesome-app] to pass the heroku app name
+
+Use uptime robot or pingdom to remove downtime on heroku's free worker dyno.
