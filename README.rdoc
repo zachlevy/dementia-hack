@@ -29,6 +29,8 @@
 
 == Start Template Setup
 
+based on https://github.com/jbhatab/rails-heroku-template
+
 bundle install
 
 Create /config/application.yml file for enviroment variables. Example is in config folder.
