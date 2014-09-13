@@ -1,8 +1,10 @@
 class SlideshowsController < ApplicationController
   def index
+    @slideshows = Slideshow.all
   end
 
   def new
+    @slideshow = Slideshow.new
   end
 
   def show
