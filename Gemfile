@@ -8,6 +8,7 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'slim-rails'
+gem 'twilio-ruby'
 
 gem 'figaro'
 gem 'rails_12factor', group: :production
