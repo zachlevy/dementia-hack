@@ -1,5 +1,6 @@
 class SlidesController < ApplicationController
   before_action :set_slide, only: [:show, :edit, :update, :destroy]
+  skip_before_filter  :verify_authenticity_token
 
   def index
     @slides = Slide.all
