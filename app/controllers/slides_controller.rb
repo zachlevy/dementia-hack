@@ -29,6 +29,7 @@ class SlidesController < ApplicationController
   end
 
   def sms
+    redirect_to root_path
     puts "========revceived SMS======="
   end
 
