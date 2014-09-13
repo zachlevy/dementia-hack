@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get '/',  to: 'slideshows#index'
 
-  get 'slides/sms'
+  post 'slides/sms'
   get 'slideshows/index'
 
   resources :slides
