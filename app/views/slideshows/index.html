@@ -1,9 +1,30 @@
 h1 Slideshows#index
 p Find me in app/views/slideshows/index.html.slim
 
-<ul>
+<div class="row">
+	<div class="col-xs-12">
 	<% @slideshows.each do |slideshow| %>
-		<li><%= link_to "Show", slideshow %></li>
-		<td><%= link_to "Edit", edit_slideshow_path(slideshow) %></td>
+		<div class="slideshow row">
+			<div class="col-xs-12">
+				<h2>Slideshow <%= slideshow.id %></h2>
+				<p><%= link_to "Show Slideshow", slideshow %></p>
+				<p><%= link_to "Edit Slideshow", edit_slideshow_path(slideshow) %></p>
+				<h3>Slides</h3>
+				<div class="slides-list row">
+					<% slideshow.slides.each do |slide| %>
+						<div class="col-xs-12 col-sm-3">
+							<h4>Slide <%= slide.id %></h4>
+							<div class="slide-list-wrap">
+								<%= raw slide.slide_html %>
+							</div>
+							<div class="slide-list-options">
+								<li><%= link_to "Edit Slide", edit_slide_path(slide) %></li>
+							</div>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
 	<% end %>
-</ul>
+	</div>
+</div>
