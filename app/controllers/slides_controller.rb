@@ -11,11 +11,9 @@ class SlidesController < ApplicationController
   end
 
   def show
-    #@slide = Slide.find(params[:id])
   end
 
   def edit
-    #@slide = Slide.find(params[:id])
   end
 
   def destroy
@@ -28,6 +26,10 @@ class SlidesController < ApplicationController
     if @slide.save
       puts "slide saved"
     end
+  end
+
+  def sms
+    puts "========revceived SMS======="
   end
 
   def update
