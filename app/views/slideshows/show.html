@@ -1,9 +1,28 @@
 h1 Slideshows#show
 p Find me in app/views/slideshows/show.html.slim
 
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+  	<% @slideshow.slides.each_with_index do |slide, index| %>
+    	<li data-target="#carousel-example-generic" data-slide-to="<%= index %>" class="<%= index == 0 ? "active" : "" %>"></li>
+    <% end %>
+  </ol>
 
-<ul>
-	<% @slideshow.slides.each do |slide| %>
-		<li><%= raw slide.slide_html %></li>
-	<% end %>
-</ul>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+  	<% @slideshow.slides.each_with_index do |slide, index| %>
+	<div class="item<%= index == 0 ? " active" : "" %>">
+      <%= raw slide.slide_html %>
+    </div>
+    <% end %>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
