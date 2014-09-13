@@ -37,6 +37,14 @@ class SlidesController < ApplicationController
     puts "========received SMS======="
     puts @message_body
     puts @from_number
+    @slide = Slide.new
+    @slide.slide_html = "<div class=\"slide-text-message\"><h1 class=\"text-message\">" + @message_body + "</h1><p class=\"text-from\">" + @from_number + "</p></div>"
+    @slide.slide_weight = 5
+    @slide.slide_length = 5000
+    @slide.slideshow_id = 1
+    if @slide.save
+      puts "text message slide saved"
+    end
   end
 
   def update
