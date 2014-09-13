@@ -9,6 +9,7 @@ p Find me in app/views/slideshows/index.html.slim
 				<h2>Slideshow <%= slideshow.id %></h2>
 				<p><%= link_to "Show Slideshow", slideshow %></p>
 				<p><%= link_to "Edit Slideshow", edit_slideshow_path(slideshow) %></p>
+				<p><a href="/slides/new?slideshow=<%= slideshow.id %>">New slide</a></p>
 				<h3>Slides</h3>
 				<div class="slides-list row">
 					<% slideshow.slides.each do |slide| %>
