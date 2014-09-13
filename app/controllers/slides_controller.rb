@@ -1,4 +1,6 @@
 class SlidesController < ApplicationController
+  before_action :set_slide, only: [:show, :edit, :update, :destroy, :join]
+
   def index
     @slides = Slide.all
   end
@@ -9,11 +11,11 @@ class SlidesController < ApplicationController
   end
 
   def show
-    @slide = Slide.find(params[:id])
+    #@slide = Slide.find(params[:id])
   end
 
   def edit
-    @slide = Slide.find(params[:id])
+    #@slide = Slide.find(params[:id])
   end
 
   def destroy
@@ -29,10 +31,14 @@ class SlidesController < ApplicationController
   end
 
   def update
+    redirect_to root_path
     @slide.update(slide_params)
   end
 
   private
+    def set_slide
+      @slide = Slide.find(params[:id])
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def slide_params
       params.require(:slide).permit(

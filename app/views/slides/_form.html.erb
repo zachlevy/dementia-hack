@@ -1,21 +1,21 @@
 <%= form_for(@slide) do |f| %>
 	<div class="field">
 		<%= f.label :slide_html %>
-		<%= f.text_area :slide_html %>
+		<%= f.text_area :slide_html, :class => "form-control"  %>
 	</div>
 	<div class="field">
 		<%= f.label :slide_weight %>
-		<%= f.number_field :slide_weight %>
+		<%= f.number_field :slide_weight, :class => "form-control"  %>
 	</div>
 	<div class="field">
 		<%= f.label :slide_length %>
-		<%= f.number_field :slide_length %>
+		<%= f.number_field :slide_length, :class => "form-control" %>
 	</div>
 	<div class="field">
 		<%= f.label :slideshow_id %>
-		<%= f.text_field :slideshow_id %>
+		<%= f.text_field :slideshow_id, :class => "form-control"  %>
 	</div>
 	<div class="actions">
-		<%= f.submit %>
+		<%= f.submit :class => "btn btn-primary" %>
 	</div>
 <% end %>

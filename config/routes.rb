@@ -3,26 +3,6 @@ Rails.application.routes.draw do
   resources :slides
   resources :slideshows
 
-  get 'slides/index'
-
-  get 'slides/new'
-
-  get 'slides/show'
-
-  get 'slides/edit'
-
-  get 'slides/destroy'
-
-  get 'slideshows/index'
-
-  get 'slideshows/new'
-
-  get 'slideshows/show'
-
-  get 'slideshows/edit'
-
-  get 'slideshows/destroy'
-
   root 'pages#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
