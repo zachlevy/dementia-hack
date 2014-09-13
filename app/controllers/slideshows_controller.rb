@@ -16,4 +16,13 @@ class SlideshowsController < ApplicationController
 
   def destroy
   end
+
+  def create
+    redirect_to root_path
+    @slideshow = Slideshow.new()
+
+    if @slideshow.save
+      puts "slideshow saved"
+    end
+  end
 end
