@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'slides/sms'
+  get 'slideshows/index'
 
   resources :slides
   resources :slideshows

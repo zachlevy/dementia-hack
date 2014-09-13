@@ -1,4 +1,5 @@
 <%= form_for(@slide) do |f| %>
+	<%= f.hidden_field :slideshow_id, :value => params[:slideshow] ? params[:slideshow] : @slide.id %>
 	<div class="field">
 		<%= f.label :slide_html %>
 		<%= f.text_area :slide_html, :class => "form-control"  %>
@@ -10,10 +11,6 @@
 	<div class="field">
 		<%= f.label :slide_length %>
 		<%= f.number_field :slide_length, :class => "form-control" %>
-	</div>
-	<div class="field">
-		<%= f.label :slideshow_id %>
-		<%= f.text_field :slideshow_id, :class => "form-control"  %>
 	</div>
 	<div class="actions">
 		<%= f.submit :class => "btn btn-primary" %>

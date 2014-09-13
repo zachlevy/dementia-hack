@@ -1,4 +1,6 @@
 class SlideshowsController < ApplicationController
+before_action :set_slideshow, only: [:show, :edit, :update, :destroy]
+
   def index
     @slideshows = Slideshow.all
   end
@@ -8,7 +10,7 @@ class SlideshowsController < ApplicationController
   end
 
   def show
-    @slideshow = Slideshow.find(params[:id])
+    #@slideshow = Slideshow.find(params[:id])
   end
 
   def edit
@@ -25,4 +27,8 @@ class SlideshowsController < ApplicationController
       puts "slideshow saved"
     end
   end
+  private
+    def set_slideshow
+      @slideshow = Slideshow.find(params[:id])
+    end
 end

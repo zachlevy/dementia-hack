@@ -1,0 +1,9 @@
+h1 Slideshows#index
+p Find me in app/views/slideshows/index.html.slim
+
+<ul>
+	<% @slideshows.each do |slideshow| %>
+		<li><%= link_to "Show", slideshow %></li>
+		<td><%= link_to "Edit", edit_slideshow_path(slideshow) %></td>
+	<% end %>
+</ul>

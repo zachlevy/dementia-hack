@@ -1,11 +1,12 @@
 class SlidesController < ApplicationController
-  before_action :set_slide, only: [:show, :edit, :update, :destroy, :join]
+  before_action :set_slide, only: [:show, :edit, :update, :destroy]
 
   def index
     @slides = Slide.all
   end
 
   def new
+    #@slideshow = Slideshow.find(params[:slideshow])
     @slide = Slide.new
     puts "new slide page"
   end
@@ -30,7 +31,7 @@ class SlidesController < ApplicationController
 
   def sms
     redirect_to root_path
-    puts "========revceived SMS======="
+    puts "========received SMS======="
   end
 
   def update
