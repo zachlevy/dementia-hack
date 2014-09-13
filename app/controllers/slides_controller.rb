@@ -30,8 +30,12 @@ class SlidesController < ApplicationController
   end
 
   def sms
+    @message_body = params["Body"]
+    @from_number = params["From"]
     redirect_to root_path
     puts "========received SMS======="
+    puts @message_body
+    puts @from_number
   end
 
   def update
