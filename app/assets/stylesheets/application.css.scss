@@ -13,3 +13,9 @@
  *= require index
  *= require_self
  */
+
+.slide-list-wrap {
+	max-width: 100%;
+	max-height: 200px;
+	overflow: hidden;
+}
