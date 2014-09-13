@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  resources :slides
+  resources :slideshows
+
   get 'slides/index'
 
   get 'slides/new'

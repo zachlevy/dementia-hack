@@ -6,6 +6,7 @@ class SlideshowsController < ApplicationController
   end
 
   def show
+    @slideshow = Slideshow.find(params[:id])
   end
 
   def edit

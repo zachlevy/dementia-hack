@@ -1,14 +1,14 @@
 class SlidesController < ApplicationController
   def index
     @slides = Slide.all
-    puts "=========test========="
   end
 
   def new
+    @slide = Slide.new
   end
 
   def show
-    
+    @slide = Slide.find(params[:id])
   end
 
   def edit
