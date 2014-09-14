@@ -38,6 +38,9 @@ h1, h2, h3, h4, h5 {
 	background: image-url("bg_light_blue.jpg") center center;
 	position: relative;
 }
+.carousel-control {
+	background: none;
+}
 /* END SLIDESHOWS */
 /* START SLIDES */
 .blockquote-box {
@@ -93,6 +96,22 @@ h1, h2, h3, h4, h5 {
 		margin: 0 auto;
 	}
 }
+.slide-text-message {
+	.text-message {
+		text-align: center;
+		h1 {
+			font-size: 3.7em;
+		}
+	}
+	.text-image-wrap {
+		width: 10%;
+		margin: 0 auto;
+	}
+	.text-image {
+		border: 3px solid white;
+	}
+}
+
 .slide-type-howto {
 
 }
