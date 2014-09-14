@@ -50,7 +50,7 @@ $(function() {
 		//speak();
 	});
 
-	//nextSlide();
+	nextSlide();
 
 });
 
@@ -113,7 +113,8 @@ function updateHowtoTemplate () {
 	var howtoListB = $("#howto-list-b").val();
 	var howtoListC = $("#howto-list-c").val();
 	var howtoHeader = $("#howto-header").val();
-	html = '<div class="slide-type-howto"><div class="col-xs-12 col-sm-4"><img src="http://placehold.it/300x300" class="img-responsive" /></div><div class="col-xs-12 col-sm-8"><h1 class="speak-this">' + howtoHeader + '</h1><ul class=""><li class="speak-this hidden">... First you need to ' + howtoListA + '</li><li>' + howtoListA + '</li><li class="speak-this hidden">... Then you need to ' + howtoListB + '</li><li>' + howtoListB + '</li><li class="speak-this hidden"> ...Finally you need to ' + howtoListC + '</li><li>' + howtoListC + '</li></ul></div></div>';
+	var howtoImage = $("#howto-img").val();
+	html = '<div class="slide-type-howto"><div class="col-xs-12 col-sm-3 col-sm-offset-2"><img src="http://placehold.it/300x300" class="img-responsive img-circle howto-image" /></div><div class="col-xs-12 col-sm-5"><h1 class="speak-this howto-header">' + howtoHeader + '</h1><ul class="howto-list"><li class="speak-this hidden">... First you need to ' + howtoListA + '</li><li><span>1</span> ' + howtoListA + '</li><li class="speak-this hidden">... Then you need to ' + howtoListB + '</li><li><span>2</span> ' + howtoListB + '</li><li class="speak-this hidden"> ...Finally you need to ' + howtoListC + '</li><li><span>3</span> ' + howtoListC + '</li></ul></div></div>';
 	$("#slide_slide_html").val(html);
 }
 

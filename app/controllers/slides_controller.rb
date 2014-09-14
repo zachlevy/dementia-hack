@@ -38,7 +38,7 @@ class SlidesController < ApplicationController
     puts @message_body
     puts @from_number
     @slide = Slide.new
-    @slide.slide_html = "<div class=\"slide-text-message\"><div class=\"text-image-wrap\"><img src=\"http://placehold.it/300x300\" class=\"img-responsive img-circle text-image\" /></div><h1 class=\"text-message speak-this\">" + @message_body + "</h1><p class=\"text-from\">" + @from_number + "</p></div>"
+    @slide.slide_html = "<div class=\"slide-text-message\"><div class=\"text-image-wrap\"><img src=\"http://i.imgur.com/TSLf8Dh.png\" class=\"img-responsive img-circle text-image\" /></div><h1 class=\"text-message speak-this\">" + @message_body + "</h1><p class=\"text-from\">" + @from_number + "</p></div>"
     @slide.slide_weight = 5
     @slide.slide_length = 5000
     

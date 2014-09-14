@@ -97,6 +97,7 @@ h1, h2, h3, h4, h5 {
 	}
 }
 .slide-text-message {
+	padding-top: 15em;
 	.text-message {
 		text-align: center;
 		h1 {
@@ -110,10 +111,37 @@ h1, h2, h3, h4, h5 {
 	.text-image {
 		border: 3px solid white;
 	}
+	.text-from {
+		text-align: center;
+		font-size: 1.3em;
+	}
 }
 
 .slide-type-howto {
-
+	padding-top: 10em;
+	.howto-header {
+		color: #222;
+		font-size: 4em;
+	}
+	.howto-list {
+		list-style: none;
+		font-size: 4em;
+		color: #333;
+	}
+	.howto-list li {
+		font-size: 3em;
+		background-color: white;
+		border-bottom: 3px solid;
+		padding-left: 1em;
+		span {
+			margin-right: 1em;
+			color: #666;
+			font-size: 1.5em;
+		}
+	}
+	.howto-image {
+		border: 3px solid white;
+	}
 }
 
 	/* END VIDEO SLIDE */
