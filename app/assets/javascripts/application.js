@@ -47,17 +47,17 @@ $(function() {
 			updateHowtoTemplate();
 			console.log($(this).val());
 		});
-		speak();
+		//speak();
 	});
 
-	nextSlide();
+	//nextSlide();
 
 });
 
 // speak text in the speak-this class
 function speak (text) {
 	//var text = $(".speak-this").html();
-	//console.log("text: " + text);
+	console.log("text: " + text);
 	var msg = new SpeechSynthesisUtterance(text);
 	window.setTimeout(function () {
 		window.speechSynthesis.speak(msg);
@@ -133,7 +133,8 @@ function updateVideoTemplate () {
 function updateReminderTemplate () {
 	var reminderText = $("#reminder-text").val();
 	var reminderTime = $("#reminder-time").val();
-	html = '<div class="slide-type-reminder"><div class="reminder-text"><h1 class="speak-this">' + reminderText + '</h1></div><div class="reminder-countdown"><ul class="countdown"><li> <span class="days">00</span><p class="days_ref">days</p></li><li class="seperator">.</li><li> <span class="hours">00</span><p class="hours_ref">hours</p></li><li class="seperator">:</li><li> <span class="minutes">00</span><p class="minutes_ref">minutes</p></li><li class="seperator">:</li><li> <span class="seconds">00</span><p class="seconds_ref">seconds</p></li></ul></div><div class="reminder-time">' + reminderTime + '</div></div>';
+	var reminderImg = $("#reminder-img").val();
+	html = '<div class="slide-type-reminder"><div class="reminder-image-wrap"><img src="' + reminderImg + '" class="img-responsive img-circle reminder-image" /></div><div class="reminder-text"><h1 class="speak-this">' + reminderText + '</h1></div><div class="reminder-countdown"></div><div class="reminder-time">Time is now ' + reminderTime + '</div></div>';
 	$("#slide_slide_html").val(html);
 }
 
