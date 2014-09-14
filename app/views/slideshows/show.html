@@ -1,4 +1,4 @@
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
   <!-- Indicators -->
   <ol class="carousel-indicators">
   	<% @slideshow.slides.each_with_index do |slide, index| %>
@@ -9,7 +9,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
   	<% @slideshow.slides.each_with_index do |slide, index| %>
-	<div class="item<%= index == 0 ? " active" : "" %>">
+	<div class="item<%= index == 0 ? " active" : "" %>" data-timer="<%= slide.slide_length %>">
       <%= raw slide.slide_html %>
     </div>
     <% end %>

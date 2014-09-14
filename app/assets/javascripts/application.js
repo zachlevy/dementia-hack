@@ -48,7 +48,27 @@ $(function() {
 			console.log($(this).val());
 		});
 	});
+
+	nextSlide();
 });
+
+
+// rotate based on db values
+function nextSlide () {
+	window.setTimeout(function () {
+		var slide = $("#carousel-example-generic .item.active");
+		var timer = slide.attr("data-timer");
+		if (slide.find(".slide-type-video").find("div").attr("id")) {
+			console.log("this slide is a video");
+		} else {
+			console.log("this slide is not a video");
+		}
+		window.setTimeout(function () {
+			$("#carousel-example-generic").carousel('next');
+			nextSlide();
+		}, timer);
+	}, 1000);
+}
 
 function onVideoClick (videoId) {
     var playerHtml = '<iframe class="player" src="//www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&loop=0&theme=light&color=white&iv_load_policy=3" frameborder="0" allowfullscreen=""></iframe>';
