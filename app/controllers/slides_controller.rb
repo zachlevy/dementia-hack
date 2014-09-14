@@ -50,7 +50,7 @@ class SlidesController < ApplicationController
         puts "======= whitelisted number ======="
         @slide.slideshow_id = slideshow.id
       else
-        @slide.slideshow_id = 3
+        @slide.slideshow_id = 4
         puts "======= not a whitelisted number ======="
       end
     end
