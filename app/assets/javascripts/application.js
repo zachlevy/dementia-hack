@@ -17,6 +17,8 @@
 
 
 $(function() {
+	renderCountdown();
+
 	console.log("app.js");
 	// when select list changed
 	$('#slide-type-select').change(function() {
@@ -33,6 +35,18 @@ $(function() {
 			updateVideoTemplate();
 			console.log($(this).val());
 		});
+		$("#reminder-template input").keyup(function () {
+			updateReminderTemplate();
+			console.log($(this).val());
+		});
+		$("#reminder-template input").on('input', function () {
+			updateReminderTemplate();
+			console.log($(this).val());
+		});
+		$("#howto-template input").keyup(function () {
+			updateHowtoTemplate();
+			console.log($(this).val());
+		});
 	});
 });
 
@@ -46,14 +60,15 @@ function onVideoClick (videoId) {
 
 }
 
+// use later to play the video when the slide becomes active
 function playVideo (videoId) {
 	html = '<iframe class="player" src="//www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&loop=0&theme=light&color=white&iv_load_policy=3" frameborder="0" allowfullscreen=""></iframe>';
 	$("#" + videoId).html(html);
 }
 
+// update the video template on the new slide page
 function updateVideoTemplate () {
 	var youtubeURL = $("#video-url").val();
-
 	var videoId = youtubeURL.split('v=')[1];
 	var ampersandPosition = videoId.indexOf('&');
 	if(ampersandPosition != -1) {
@@ -65,4 +80,40 @@ function updateVideoTemplate () {
 	$("#slide_slide_html").val(html);
 }
 
+// update the video template on the new slide page
+function updateReminderTemplate () {
+	var reminderText = $("#reminder-text").val();
+	var reminderTime = $("#reminder-time").val();
+	html = '<div class="slide-type-reminder"><div class="reminder-text"><h1>' + reminderText + '</h1></div><div class="reminder-countdown"><ul class="countdown"><li> <span class="days">00</span><p class="days_ref">days</p></li><li class="seperator">.</li><li> <span class="hours">00</span><p class="hours_ref">hours</p></li><li class="seperator">:</li><li> <span class="minutes">00</span><p class="minutes_ref">minutes</p></li><li class="seperator">:</li><li> <span class="seconds">00</span><p class="seconds_ref">seconds</p></li></ul></div><div class="reminder-time">' + reminderTime + '</div></div>';
+	$("#slide_slide_html").val(html);
 
+	
+}
+
+function updateHowtoTemplate () {
+
+}
+
+function renderCountdown () {
+	$(".reminder-time").each(function () {
+		var reminderTime = $(this).html();
+		var today = new Date();
+		var lameDate = today.getFullYear() + "-" + (today.getMonth()+1) + "-" + today.getDate();
+		var todayReminder = new Date(lameDate + " " + reminderTime);
+		var countdown = Math.abs((new Date()).getTime() - todayReminder.getTime());
+		var minutes = Math.round((countdown / 1000) / 60);
+		var timeText = "";
+		if (minutes > 60) {
+			var hours = Math.round(minutes / 60);
+			var hourMinutes = minutes % 60;
+			timeText = hours + " hours, " + hourMinutes + " minutes";
+		} else {
+			timeText = minutes + " minutes";
+		}
+
+		$(this).siblings(".reminder-countdown").html("<h4>" + timeText + "</h4>");
+		//$(this).siblings(".reminder-countdown");
+
+
+	});
+}

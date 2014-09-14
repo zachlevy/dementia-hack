@@ -8,17 +8,38 @@
 				<option value="video">Video</option>
 			</select>
 		</div>
+
 		<div id="reminder-template" class="hidden template">
 			<h2>Add Reminder</h2>
+			<div class="field col-xs-12 col-sm-2">
+				<label name="reminder-text">Reminder Text</label>
+				<input id="reminder-text" name="reminder-text" type="text" class="form-control" placeholder="eg: Take your green pills"/>
+			</div>
+			<div class="field col-xs-12 col-sm-2">
+				<label name="reminder-time">Reminder Time</label>
+				<input id="reminder-time" name="reminder-time" type="time" name="usr_time" class="form-control">
+			</div>
 		</div>
+
 		<div id="howto-template" class="hidden template">
 			<h2>Add How To</h2>
-			<input type="text" class="form-control" />
+			<div class="field col-xs-12 col-sm-2">
+				<input type="text" class="form-control" />
+			</div>
+			<div class="field col-xs-12 col-sm-2">
+				<input type="text" class="form-control" />
+			</div>
+			<div class="field col-xs-12 col-sm-2">
+				<input type="text" class="form-control" />
+			</div>
 		</div>
+
 		<div id="video-template" class="hidden template">
 			<h2>Add Video</h2>
-			<label name="video-url">YouTube URL</label>
-			<input id="video-url" name="video-url" type="text" class="form-control" placeholder="eg: http://www.youtube.com/watch?v=w8KQmps-Sog"/>
+			<div class="field col-xs-12 col-sm-2">
+				<label name="video-url">YouTube URL</label>
+				<input id="video-url" name="video-url" type="text" class="form-control" placeholder="eg: http://www.youtube.com/watch?v=w8KQmps-Sog"/>
+			</div>
 		</div>
 	</div>
 	<%= f.hidden_field :slideshow_id, :value => params[:slideshow] ? params[:slideshow] : @slide.id %>
