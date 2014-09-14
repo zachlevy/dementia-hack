@@ -47,11 +47,20 @@ $(function() {
 			updateHowtoTemplate();
 			console.log($(this).val());
 		});
+		speak();
 	});
 
 	nextSlide();
+
 });
 
+// speak text in the speak-this class
+function speak (text) {
+	//var text = $(".speak-this").html();
+	//console.log("text: " + text);
+	var msg = new SpeechSynthesisUtterance(text);
+	window.speechSynthesis.speak(msg);
+}
 
 // rotate based on db values
 function nextSlide () {
@@ -59,6 +68,11 @@ function nextSlide () {
 		var slide = $("#carousel-example-generic .item.active");
 		var timer = slide.attr("data-timer");
 		var videoId = slide.find(".slide-type-video").find("div").attr("id");
+		var speachText = slide.find(".speak-this").html();
+		if (speachText) {
+			speak(speachText);
+		}
+		console.log("speachText " + speachText);
 		if (videoId) {
 			console.log("this slide is a video");
 			playVideo(videoId);
