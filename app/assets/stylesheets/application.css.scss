@@ -67,13 +67,16 @@ h1, h2, h3, h4, h5 {
 .slide-type-reminder {
 	padding-top: 12em;
 	color: #333;
-	.reminder-time {
+	.reminder-time-wrap {
 		text-align: right;
 		position: absolute;
 		right: 0;
 		bottom: 0;
 		padding: 2em;
 		font-size: 2em;
+	}
+	.reminder-time {
+
 	}
 	.reminder-text {
 		text-align: center;
