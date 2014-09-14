@@ -1,4 +1,26 @@
 <%= form_for(@slide) do |f| %>
+	<div id="input-workspace">
+		<div class="field">
+			<select id="slide-type-select" class="form-control">
+				<option>Choose a Slide Template</option>
+				<option value="reminder">Reminder</option>
+				<option value="howto">How To</option>
+				<option value="video">Video</option>
+			</select>
+		</div>
+		<div id="reminder-template" class="hidden template">
+			<h2>Add Reminder</h2>
+		</div>
+		<div id="howto-template" class="hidden template">
+			<h2>Add How To</h2>
+			<input type="text" class="form-control" />
+		</div>
+		<div id="video-template" class="hidden template">
+			<h2>Add Video</h2>
+			<label name="video-url">YouTube URL</label>
+			<input id="video-url" name="video-url" type="text" class="form-control" placeholder="eg: http://www.youtube.com/watch?v=w8KQmps-Sog"/>
+		</div>
+	</div>
 	<%= f.hidden_field :slideshow_id, :value => params[:slideshow] ? params[:slideshow] : @slide.id %>
 	<div class="field">
 		<%= f.label :slide_html %>

@@ -14,15 +14,19 @@
  *= require_self
  */
 
+/* START BASE */
+.container-fluid {
+	padding: 0;
+}
+/* END BASE */
+/* START SLIDESHOWS */
 .slide-list-wrap {
 	max-width: 100%;
 	max-height: 200px;
 	overflow: hidden;
 }
-
-.container-fluid {
-	padding: 0;
-}
+/* END SLIDESHOWS */
+/* START SLIDES */
 .blockquote-box {
 	border-right:5px 
 	solid #E6E6E6;
@@ -37,3 +41,20 @@
 	background-color:#E6E6E6;
 	padding:20px 0
 }
+	/* START VIDEO SLIDE */
+.slide-type-video {
+	iframe {
+		min-width: 100%;
+		min-height: 110%;
+	}
+}
+	/* END VIDEO SLIDE */
+/* END SLIDES */
+
+
+
+
+
+
+
+
