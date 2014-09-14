@@ -41,7 +41,17 @@ class SlidesController < ApplicationController
     @slide.slide_html = "<div class=\"slide-text-message\"><h1 class=\"text-message\">" + @message_body + "</h1><p class=\"text-from\">" + @from_number + "</p></div>"
     @slide.slide_weight = 5
     @slide.slide_length = 5000
-    @slide.slideshow_id = 1
+    
+    @slideshows = Slideshow.all
+    @Slideshows.each do |slideshow|
+      if "+1" + slideshow.phonenumber == @from_number
+        puts "======= whitelisted number ======="
+        @slide.slideshow_id = slideshow.id
+      else
+        @slide.slideshow_id = 1
+        puts "======= not a whitelisted number ======="
+      end
+    end
     if @slide.save
       puts "text message slide saved"
     end

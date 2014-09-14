@@ -21,7 +21,7 @@ before_action :set_slideshow, only: [:show, :edit, :update, :destroy]
 
   def create
     redirect_to root_path
-    @slideshow = Slideshow.new()
+    @slideshow = Slideshow.new(slideshow_params)
 
     if @slideshow.save
       puts "slideshow saved"
@@ -30,5 +30,10 @@ before_action :set_slideshow, only: [:show, :edit, :update, :destroy]
   private
     def set_slideshow
       @slideshow = Slideshow.find(params[:id])
+    end
+    def slideshow_params
+      params.require(:slideshow).permit(
+          :phonenumber
+        )
     end
 end
