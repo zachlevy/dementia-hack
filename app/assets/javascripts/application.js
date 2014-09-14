@@ -66,6 +66,16 @@ function playVideo (videoId) {
 	$("#" + videoId).html(html);
 }
 
+// update the howto template on the new slide page
+function updateHowtoTemplate () {
+	var howtoListA = $("#howto-list-a").val();
+	var howtoListB = $("#howto-list-b").val();
+	var howtoListC = $("#howto-list-c").val();
+	var howtoHeader = $("#howto-header").val();
+	html = '<div class="slide-type-howto"><div class="col-xs-12 col-sm-4"><img src="http://placehold.it/300x300" class="img-responsive" /></div><div class="col-xs-12 col-sm-8"><h1>' + howtoHeader + '</h1><ul class=""><li>' + howtoListA + '</li><li>' + howtoListB + '</li><li>' + howtoListC + '</li></ul></div></div>';
+	$("#slide_slide_html").val(html);
+}
+
 // update the video template on the new slide page
 function updateVideoTemplate () {
 	var youtubeURL = $("#video-url").val();
@@ -74,8 +84,6 @@ function updateVideoTemplate () {
 	if(ampersandPosition != -1) {
 		videoId = videoId.substring(0, ampersandPosition);
 	}
-	console.log(videoId);
-
 	html = '<div class="slide-type-video"><div id="' + videoId + '"></div><iframe class="player" src="//www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&loop=0&theme=light&color=white&iv_load_policy=3" frameborder="0" allowfullscreen=""></iframe></div>';
 	$("#slide_slide_html").val(html);
 }
@@ -86,12 +94,6 @@ function updateReminderTemplate () {
 	var reminderTime = $("#reminder-time").val();
 	html = '<div class="slide-type-reminder"><div class="reminder-text"><h1>' + reminderText + '</h1></div><div class="reminder-countdown"><ul class="countdown"><li> <span class="days">00</span><p class="days_ref">days</p></li><li class="seperator">.</li><li> <span class="hours">00</span><p class="hours_ref">hours</p></li><li class="seperator">:</li><li> <span class="minutes">00</span><p class="minutes_ref">minutes</p></li><li class="seperator">:</li><li> <span class="seconds">00</span><p class="seconds_ref">seconds</p></li></ul></div><div class="reminder-time">' + reminderTime + '</div></div>';
 	$("#slide_slide_html").val(html);
-
-	
-}
-
-function updateHowtoTemplate () {
-
 }
 
 function renderCountdown () {
