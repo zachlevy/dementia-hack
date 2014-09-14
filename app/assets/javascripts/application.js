@@ -58,13 +58,18 @@ function nextSlide () {
 	window.setTimeout(function () {
 		var slide = $("#carousel-example-generic .item.active");
 		var timer = slide.attr("data-timer");
-		if (slide.find(".slide-type-video").find("div").attr("id")) {
+		var videoId = slide.find(".slide-type-video").find("div").attr("id");
+		if (videoId) {
 			console.log("this slide is a video");
+			playVideo(videoId);
 		} else {
 			console.log("this slide is not a video");
 		}
 		window.setTimeout(function () {
 			$("#carousel-example-generic").carousel('next');
+			if (videoId) {
+				$("#" + videoId).html("");
+			}
 			nextSlide();
 		}, timer);
 	}, 1000);
@@ -104,7 +109,7 @@ function updateVideoTemplate () {
 	if(ampersandPosition != -1) {
 		videoId = videoId.substring(0, ampersandPosition);
 	}
-	html = '<div class="slide-type-video"><div id="' + videoId + '"></div><iframe class="player" src="//www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&loop=0&theme=light&color=white&iv_load_policy=3" frameborder="0" allowfullscreen=""></iframe></div>';
+	html = '<div class="slide-type-video"><div id="' + videoId + '"></div></div>';
 	$("#slide_slide_html").val(html);
 }
 
