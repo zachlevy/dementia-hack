@@ -153,9 +153,9 @@ function renderCountdown () {
 		if (minutes > 60) {
 			var hours = Math.round(minutes / 60);
 			var hourMinutes = minutes % 60;
-			timeText = hours + " hours, " + hourMinutes + " minutes";
+			timeText = "in " + hours + " hours, " + hourMinutes + " minutes";
 		} else {
-			timeText = minutes + " minutes";
+			timeText = "in " + minutes + " minutes";
 		}
 
 		$(this).siblings(".reminder-countdown").html("<h4>" + timeText + "</h4>");
