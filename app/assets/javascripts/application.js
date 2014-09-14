@@ -79,7 +79,7 @@ function nextSlide () {
 			console.log("this slide is a video");
 			playVideo(videoId);
 		} else {
-			console.log("this slide is not a video");
+			//console.log("this slide is not a video");
 		}
 		window.setTimeout(function () {
 			$("#carousel-example-generic").carousel('next');
@@ -135,7 +135,7 @@ function updateReminderTemplate () {
 	var reminderText = $("#reminder-text").val();
 	var reminderTime = $("#reminder-time").val();
 	var reminderImg = $("#reminder-img").val();
-	html = '<div class="slide-type-reminder"><div class="reminder-image-wrap"><img src="' + reminderImg + '" class="img-responsive img-circle reminder-image" /></div><div class="reminder-text"><h1 class="speak-this">' + reminderText + '</h1></div><div class="reminder-countdown"></div><div class="reminder-time">Time is now ' + reminderTime + '</div></div>';
+	html = '<div class="slide-type-reminder"><div class="reminder-image-wrap"><img src="' + reminderImg + '" class="img-responsive img-circle reminder-image" /></div><div class="reminder-text"><h1 class="speak-this">' + reminderText + '</h1></div><div class="reminder-countdown"></div><div class="">Reminder for <span class="reminder-time">' + reminderTime + '</span></div></div>';
 	$("#slide_slide_html").val(html);
 }
 
@@ -146,7 +146,9 @@ function renderCountdown () {
 		var lameDate = today.getFullYear() + "-" + (today.getMonth()+1) + "-" + today.getDate();
 		var todayReminder = new Date(lameDate + " " + reminderTime);
 		var countdown = Math.abs((new Date()).getTime() - todayReminder.getTime());
+		console.log("countdown " + countdown);
 		var minutes = Math.round((countdown / 1000) / 60);
+		console.log("minutes " + minutes);
 		var timeText = "";
 		if (minutes > 60) {
 			var hours = Math.round(minutes / 60);
