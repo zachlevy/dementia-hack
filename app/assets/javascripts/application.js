@@ -59,7 +59,9 @@ function speak (text) {
 	//var text = $(".speak-this").html();
 	//console.log("text: " + text);
 	var msg = new SpeechSynthesisUtterance(text);
-	window.speechSynthesis.speak(msg);
+	window.setTimeout(function () {
+		window.speechSynthesis.speak(msg);
+	}, 1000);
 }
 
 // rotate based on db values
@@ -111,7 +113,7 @@ function updateHowtoTemplate () {
 	var howtoListB = $("#howto-list-b").val();
 	var howtoListC = $("#howto-list-c").val();
 	var howtoHeader = $("#howto-header").val();
-	html = '<div class="slide-type-howto"><div class="col-xs-12 col-sm-4"><img src="http://placehold.it/300x300" class="img-responsive" /></div><div class="col-xs-12 col-sm-8"><h1>' + howtoHeader + '</h1><ul class=""><li>' + howtoListA + '</li><li>' + howtoListB + '</li><li>' + howtoListC + '</li></ul></div></div>';
+	html = '<div class="slide-type-howto"><div class="col-xs-12 col-sm-4"><img src="http://placehold.it/300x300" class="img-responsive" /></div><div class="col-xs-12 col-sm-8"><h1 class="speak-this">' + howtoHeader + '</h1><ul class=""><li class="speak-this hidden">... First you need to ' + howtoListA + '</li><li>' + howtoListA + '</li><li class="speak-this hidden">... Then you need to ' + howtoListB + '</li><li>' + howtoListB + '</li><li class="speak-this hidden"> ...Finally you need to ' + howtoListC + '</li><li>' + howtoListC + '</li></ul></div></div>';
 	$("#slide_slide_html").val(html);
 }
 
@@ -131,7 +133,7 @@ function updateVideoTemplate () {
 function updateReminderTemplate () {
 	var reminderText = $("#reminder-text").val();
 	var reminderTime = $("#reminder-time").val();
-	html = '<div class="slide-type-reminder"><div class="reminder-text"><h1>' + reminderText + '</h1></div><div class="reminder-countdown"><ul class="countdown"><li> <span class="days">00</span><p class="days_ref">days</p></li><li class="seperator">.</li><li> <span class="hours">00</span><p class="hours_ref">hours</p></li><li class="seperator">:</li><li> <span class="minutes">00</span><p class="minutes_ref">minutes</p></li><li class="seperator">:</li><li> <span class="seconds">00</span><p class="seconds_ref">seconds</p></li></ul></div><div class="reminder-time">' + reminderTime + '</div></div>';
+	html = '<div class="slide-type-reminder"><div class="reminder-text"><h1 class="speak-this">' + reminderText + '</h1></div><div class="reminder-countdown"><ul class="countdown"><li> <span class="days">00</span><p class="days_ref">days</p></li><li class="seperator">.</li><li> <span class="hours">00</span><p class="hours_ref">hours</p></li><li class="seperator">:</li><li> <span class="minutes">00</span><p class="minutes_ref">minutes</p></li><li class="seperator">:</li><li> <span class="seconds">00</span><p class="seconds_ref">seconds</p></li></ul></div><div class="reminder-time">' + reminderTime + '</div></div>';
 	$("#slide_slide_html").val(html);
 }
 
