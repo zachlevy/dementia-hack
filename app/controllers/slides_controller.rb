@@ -44,7 +44,7 @@ class SlidesController < ApplicationController
     
     @slideshows = Slideshow.all
     @slideshows.each do |slideshow|
-      if "+1" + slideshow.phonenumber == @from_number
+      if "+1" + slideshow.phonenumber.to_s == @from_number
         puts "======= whitelisted number ======="
         @slide.slideshow_id = slideshow.id
       else
