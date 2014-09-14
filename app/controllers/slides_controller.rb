@@ -19,6 +19,8 @@ class SlidesController < ApplicationController
   end
 
   def destroy
+    redirect_to root_path
+    @slide.destroy
   end
 
   def create

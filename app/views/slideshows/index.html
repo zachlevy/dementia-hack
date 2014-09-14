@@ -20,6 +20,7 @@ p Find me in app/views/slideshows/index.html.slim
 							</div>
 							<div class="slide-list-options">
 								<li><%= link_to "Edit Slide", edit_slide_path(slide) %></li>
+								<li><%= link_to 'Destroy Slide', slide, method: :delete %></li>
 							</div>
 						</div>
 					<% end %>
