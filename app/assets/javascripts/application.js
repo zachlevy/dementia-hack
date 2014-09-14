@@ -135,7 +135,7 @@ function updateReminderTemplate () {
 	var reminderText = $("#reminder-text").val();
 	var reminderTime = $("#reminder-time").val();
 	var reminderImg = $("#reminder-img").val();
-	html = '<div class="slide-type-reminder"><div class="reminder-image-wrap"><img src="' + reminderImg + '" class="img-responsive img-circle reminder-image" /></div><div class="reminder-text"><h1 class="speak-this">' + reminderText + '</h1></div><div class="reminder-countdown"></div><div class="reminder-time-wrap">Reminder for <span class="reminder-time">' + reminderTime + '</span></div></div>';
+	html = '<div class="slide-type-reminder"><div class="reminder-image-wrap"><img src="' + reminderImg + '" class="img-responsive img-circle reminder-image" /></div><div class="reminder-text"><h1 class="speak-this">' + reminderText + '</h1></div><div class="reminder-countdown"></div><div class="reminder-time hidden">' + reminderTime + '</div><div class="reminder-time-wrap">Reminder for <span class="reminder-time-visible">' + reminderTime + '</span></div></div>';
 	$("#slide_slide_html").val(html);
 }
 
